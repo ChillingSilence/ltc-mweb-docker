@@ -69,16 +69,5 @@ EXPOSE 19335
 # Allow Testnet P2P comms
 EXPOSE 19332
 
-# Create conf file
-RUN echo -e "datadir=${ROOTDATADIR}/.litecoin/\n\
-server=1\n\
-prune=${PRUNESIZE}\n\
-maxconnections=300\n\
-rpcallowip=127.0.0.1\n\
-daemon=1\n\
-rpcuser=${RPCUSERNAME}\n\
-rpcpassword=$RPCPASSWORD}\n\
-txindex=0\n\
-testnet=${TESTNET}\n" > ${ROOTDATADIR}/.litecoin/litecoin.conf
-
-CMD /usr/local/bin/litecoind -conf=${ROOTDATADIR}/.litecoin/litecoin.conf
+# Command for running
+CMD /data/litecoin/depends/x86_64-pc-linux-gnu/bin/litecoind -testnet=${TESTNET} -txindex=0 -rpcpassword=$RPCPASSWORD} -rpcuser=${RPCUSERNAME} -daemon=1 -rpcallowip=127.0.0.1 -prune=${PRUNESIZE} -server=1
