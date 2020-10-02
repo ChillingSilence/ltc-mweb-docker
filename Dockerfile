@@ -41,8 +41,8 @@ RUN git clone https://github.com/ltc-mweb/libmw.git --recursive \
 	&& cd ../.. && mkdir -p build && cd build \
 	&& cmake -DCMAKE_BUILD_TYPE=Release .. && cmake --build . --target install
 
-# Clone the Core wallet source from GitHub and checkout the version.
-RUN git clone https://github.com/litecoin-project/litecoin/ --branch ${LTCVERSION} --single-branch
+# RUN git clone https://github.com/litecoin-project/litecoin/ --branch ${LTCVERSION} --single-branch
+RUN git clone https://github.com/ltc-mweb/litecoin/
 
 RUN cd ${ROOTDATADIR}/litecoin \
 	&& cd depends \
