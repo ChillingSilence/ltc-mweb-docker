@@ -1,4 +1,4 @@
-# lwc-mweb-docker
+# ltc-mweb-docker
 Build & test Litecoin + MW EB's from docker easily
 
 Currently while awaiting further instructions this builds ltc-mweb/libmw and litecoin-project/litecoin (0.18, configurable)
